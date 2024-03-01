@@ -69,6 +69,7 @@ int main()
     printf("Client socket says: %s\n", incoming);
     send(client_socket, strupr(incoming), sizeof(incoming), NULL);
 
+    freeaddrinfo(res);
     close(server_socket);
 
     return 0;
